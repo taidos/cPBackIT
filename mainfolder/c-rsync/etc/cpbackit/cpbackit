@@ -1,0 +1,11 @@
+#!/bin/bash
+#Copyright(C)2010@carlos-faustino.com
+export tiday=`date +%F`
+touch /var/log/cpbackit/cpbackit.$tiday; cd /etc/cpbackit/; cat cpbackit.conf rsync1 >> rsync; chmod 777 rsync; /etc/cpbackit/package  | tee /var/log/cpbackit/cpbackit.$tiday; cd /etc/cpbackit/; cat cpbackit.conf notification >> send; chmod 777 /etc/cpbackit/send; /etc/cpbackit/send; rm -rf /etc/cpbackit/send;
+
+echo -e "===============  cPBackIT - Final Stage ( Notification Process )   =============="
+echo -e "-------------------------------------------------------------------------------------------"
+
+/etc/cpbackit/notification /etc/cpbackit/rsync*; sleep 900; rm -rf /etc/cpbackit/cpbackit; rm -rf /etc/cpbackit/package; rm -rf /home/cpmove*; /etc/init.d/csf start; /etc/init.d/iptables start
+
+

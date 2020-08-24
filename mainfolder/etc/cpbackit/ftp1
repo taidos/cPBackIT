@@ -1,0 +1,14 @@
+exec 4>&1
+ftp -nv >&4 2>&4 |&
+
+print -p open $HOST $PORT
+print -p user $USER $PASSWD
+print -p cd /$FOLDER
+print -p binary
+print -p put $FILE
+print -p bye
+
+wait
+exit 0
+
+

@@ -1,0 +1,4 @@
+#!/bin/bash
+#Copyright(C)2010@carlos-faustino.com
+export tiday=`date +%F`
+(echo "[cPBakIT] Here is the logs related to $tiday"; uuencode /var/log/cpbackit/cpbackit.$tiday /var/log/cpbackit/cpbackit.$tiday) | mail -s "cPBackIT - Backup Logs" $EMAIL
