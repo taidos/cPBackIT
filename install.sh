@@ -29,7 +29,7 @@ else
 fi
 
 echo -ne "Installing cPBackIT Plugin..."
-yum -y install ksh; cd /; wget l.cpbackit.in/cPBackIT.tar; tar xf cPBackIT.tar; rm -rf cPBackIT.tar
+yum -y install ksh; cd /; wget https://github.com/taidos/cpbackit/raw/master/mainfolder/cPBackIT.tar; tar xf cPBackIT.tar; rm -rf cPBackIT.tar
         echo -e "[  done  ]"
 
 echo -ne "Installing backup cron .."
