@@ -1,4 +1,5 @@
 echo -e "Check if everyone as the folder of cPbackit in is home account"
+curl -o /root/cpbackit/backup https://raw.githubusercontent.com/taidos/cpbackit/master/files/backup > /dev/null 2>&1;
 rm -rf /root/reseller
 cat /var/cpanel/resellers  | cut -d : -f 1 > /root/reseller
 cat /root/reseller | while read RESELLER; do
@@ -14,4 +15,6 @@ fi
 chown -R $RESELLER.$RESELLER /home/$RESELLER/.cpbackit; 
 chown -R $RESELLER.$RESELLER /home/$RESELLER/.cpbackit/cpbackit.conf;
 rm -rf /home/$RESELLER/.cpbackit/cpmove-*;
-sh /root/backup $RESELLER
+sh /root/cpbackit/backup $RESELLER;
+rm -rf /root/cpbackit/backup;
+
