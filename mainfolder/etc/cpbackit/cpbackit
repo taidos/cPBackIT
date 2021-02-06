@@ -1,5 +1,0 @@
-#!/bin/bash
-#Copyright(C)2010@carlos-faustino.com
-export tiday=`date +%F`
-touch /var/log/cpbackit/cpbackit.$tiday; cd /etc/cpbackit/; cat cpbackit.conf ftp1 >> ftp; chmod 777 ftp; /etc/cpbackit/package  | tee /var/log/cpbackit/cpbackit.$tiday; cd /etc/cpbackit/; cat cpbackit.conf notification >> send; chmod 777 /etc/cpbackit/send; /etc/cpbackit/send; rm -rf /etc/cpbackit/send /etc/cpbackit/notification /etc/cpbackit/ftp*; sleep 900; rm -rf /etc/cpbackit/cpbackit; rm -rf /etc/cpbackit/package;rm -rf /etc/cpbackit/backups.tar; rm -rf /home/cpmove*
-

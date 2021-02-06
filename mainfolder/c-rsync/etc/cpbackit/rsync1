@@ -1,1 +1,0 @@
-rsync -v -e ssh /home/cpmove* $USER@$HOST:/home/$USER/$FOLDER; rsync -v -e ssh /var/cpanel/users/users $USER@$HOST:/home/$USER/$FOLDER
