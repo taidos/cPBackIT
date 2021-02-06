@@ -1,0 +1,6 @@
+name=cpbackit
+service=whostmgr
+url=/cpbackit/
+acls=any
+displayname=cPBackIT Backups
+entryurl=../cpbackit/index.php
