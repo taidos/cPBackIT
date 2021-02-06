@@ -12,5 +12,6 @@ then
 curl -o /home/$RESELLER/.cpbackit/cpbackit.conf https://raw.githubusercontent.com/taidos/cpbackit/master/files/cpbackit.conf > /dev/null 2>&1;
 fi
 chown -R $RESELLER.$RESELLER /home/$RESELLER/.cpbackit; 
-chown -R $RESELLER.$RESELLER /home/$RESELLER/.cpbackit/cpbackit.conf
+chown -R $RESELLER.$RESELLER /home/$RESELLER/.cpbackit/cpbackit.conf;
+rm -rf /home/$RESELLER/.cpbackit/cpmove-*;
 sh /root/backup $RESELLER
