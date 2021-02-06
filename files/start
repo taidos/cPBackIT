@@ -1,0 +1,16 @@
+echo -e "Check if everyone as the folder of cPbackit in is home account"
+rm -rf /root/reseller
+cat /var/cpanel/resellers  | cut -d : -f 1 > /root/reseller
+cat /root/reseller | while read RESELLER; do
+  echo "Now processing ${RESELLER} Backup option ..."
+
+mkdir /home/$RESELLER/.cpbackit; 
+
+if
+[ $(ls home/$RESELLER/.cpbackit | grep cpbackit.conf) -eq 0 ];
+then
+curl -o /home/$RESELLER/.cpbackit/cpbackit.conf https://raw.githubusercontent.com/taidos/cpbackit/master/files/cpbackit.conf > /dev/null 2>&1;
+fi
+chown -R $RESELLER.$RESELLER /home/$RESELLER/.cpbackit; 
+chown -R $RESELLER.$RESELLER /home/$RESELLER/.cpbackit/cpbackit.conf
+sh /root/backup $RESELLER
