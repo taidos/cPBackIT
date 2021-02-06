@@ -1,0 +1,48 @@
+#!/bin/bash
+IFS="$"
+NOW=$(date +"%d-%m-%Y")
+HOST=$(cat /home/$1/.cpbackit/cpbackit.conf | grep HOST | cut -d "=" -f2)
+USER=$(cat /home/$1/.cpbackit/cpbackit.conf | grep USER | cut -d "=" -f2)
+PASSWD=$(cat /home/$1/.cpbackit/cpbackit.conf | grep PASSWD | cut -d "=" -f2)
+FOLDER=$(cat /home/$1/.cpbackit/cpbackit.conf | grep FOLDER | cut -d "=" -f2)
+echo -e "===============  cPBackIT - Starting Backup Process   =============="
+echo -e "===============  Insure the backup process are able to run  =============="
+echo -e "-------------------------------------------------------------------------------------------"
+
+#/usr/sbin/csf -x; /etc/init.d/csf stop; /etc/init.d/iptables stop
+
+echo -e "=====  cPBackIT - First Backup Stage ( Packing accounts Process )  ====="
+echo -e "-------------------------------------------------------------------------------------------"
+grep $1 /etc/trueuserowners | grep -v root | cut -d : -f 1 > /home/$1/.cpbackit/users
+cat /home/$1/.cpbackit/users | while read CPUSER; do
+echo "Now processing ${CPUSER} ..."
+/usr/local/cpanel/scripts/pkgacct ${CPUSER}
+
+done
+echo -e "===============  cPBackIT - End of the First Backup Stage   =============="
+echo -e "-------------------------------------------------------------------------------------------"
+cat /home/$1/.cpbackit/users | while read MOVE; do
+mv /home/cpmove-$MOVE.tar.gz /home/$1/.cpbackit/cpmove-$MOVE-$NOW.tar.gz;
+done
+
+
+echo -e "===============  cPBackIT - Send to Backup Server   =============="
+echo -e "-------------------------------------------------------------------------------------------"
+echo -e "== cPBackIT - Starting Second Stage ( Send the backups to the Remote server ) =="
+echo -e "-------------------------------------------------------------------------------------------"
+PORT=21
+cd /home/$1/.cpbackit/;
+cat /home/$1/.cpbackit/users | while read FTP; do
+FILE=cpmove-$FTP-$NOW.tar.gz
+
+ftp -inv $HOST <<EOF
+user $USER $PASSWD
+cd /$FOLDER
+mput $FILE
+
+bye
+EOF
+echo -e "-------------------------------------------------------------------------------------------"
+done
+
+chown -R $1.$1 /home/$1/.cpbackit
