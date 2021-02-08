@@ -13,6 +13,7 @@ echo -e "-----------------------------------------------------------------------
 
 echo -e "=====  cPBackIT - First Backup Stage ( Packing accounts Process )  ====="
 echo -e "-------------------------------------------------------------------------------------------"
+rm -rf /home/$1/.cpbackit/users
 grep $1 /etc/trueuserowners | grep -v root | cut -d : -f 1 > /home/$1/.cpbackit/users
 cat /home/$1/.cpbackit/users | while read CPUSER; do
 echo "Now processing ${CPUSER} ..."
@@ -33,6 +34,7 @@ echo -e "-----------------------------------------------------------------------
 PORT=21
 cd /home/$1/.cpbackit/;
 cat /home/$1/.cpbackit/users | while read FTP; do
+
 FILE=cpmove-$FTP-$NOW.tar.gz
 
 ftp -inv $HOST <<EOF
