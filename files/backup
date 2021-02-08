@@ -1,13 +1,15 @@
 #!/bin/bash
 IFS="$"
 NOW=$(date +"%d-%m-%Y")
-USER=$(cat /home/$1/.cpbackit/cpbackit.conf | grep USER | cut -d "=" -f2)
-PASSWD=$(cat /home/$1/.cpbackit/cpbackit.conf | grep PASSWD | cut -d "=" -f2)
-FOLDER=$(cat /home/$1/.cpbackit/cpbackit.conf | grep FOLDER | cut -d "=" -f2)
-HOST=$(cat /home/$1/.cpbackit/cpbackit.conf | grep HOST | cut -d "=" -f2 | sed 's/..$//')
-#USER=$(cat /home/$1/.cpbackit/cpbackit.conf | grep USER | cut -d "=" -f2 | sed 's/..$//')
-#PASSWD=$(cat /home/$1/.cpbackit/cpbackit.conf | grep PASSWD | cut -d "=" -f2 | sed 's/..$//')
-#FOLDER=$(cat /home/$1/.cpbackit/cpbackit.conf | grep FOLDER | cut -d "=" -f2 | sed 's/..$//')
+HOST=$(cat /home/carlos/.cpbackit/cpbackit.conf | grep HOST | cut -d "=" -f2 |  sed 's/.$//')
+#HOST=$(less /home/carlos/.cpbackit/cpbackit.conf  | grep HOST | cut -d "=" -f2|  sed 's/..$//')
+USER=$(cat /home/carlos/.cpbackit/cpbackit.conf | grep USER | cut -d "=" -f2 | sed 's/.$//')
+#USER=$(cat /home/carlos/.cpbackit/cpbackit.conf | grep USER | cut -d "=" -f2)
+PASSWD=$(cat /home/carlos/.cpbackit/cpbackit.conf | grep PASSWD | cut -d "=" -f2 |  sed 's/.$//')
+#PASSWD=$(cat /home/carlos/.cpbackit/cpbackit.conf | grep PASSWD | cut -d "=" -f2)
+FOLDER=$(cat /home/carlos/.cpbackit/cpbackit.conf | grep FOLDER | cut -d "=" -f2 |  sed 's/.$//')
+#FOLDER=$(cat /home/carlos/.cpbackit/cpbackit.conf | grep FOLDER | cut -d "=" -f2)
+
 echo -e "===============  cPBackIT - Starting Backup Process   =============="
 echo -e "===============  Insure the backup process are able to run  =============="
 echo -e "-------------------------------------------------------------------------------------------"
