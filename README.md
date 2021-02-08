@@ -2,7 +2,7 @@
 
 
 # cPBackIT
-My first cPanel Backup Plugin 
+My first cPanel Backup Plugin, no this is now my second, i have changed all the code, its more clean, more safer and endid small
 
 We need now more changes on the source code but if someone wants to help you can email me at taidos@sapo.pt
 
