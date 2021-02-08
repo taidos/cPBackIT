@@ -22,5 +22,5 @@ fi
 
 rm -rf /home/$RESELLER/.cpbackit/cpmove-*;
 echo -e "Start backup the reseller account $RESELLER"
-sh /root/cpbackit/backup $RESELLER;
+nice -n -19 sh /root/cpbackit/backup $RESELLER;
 done
