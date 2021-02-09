@@ -1,5 +1,6 @@
 <?
-$fn = "/home/carlos/.cpbackit/cpbackit.conf";
+$usario = $_ENV['REMOTE_USER'];
+$fn = "/home/".$usario."/.cpbackit/cpbackit.conf";
 $content = stripslashes($_POST['content']);
 $fp = fopen($fn,"w") or die ("Error opening file in write mode!");
 fputs($fp,$content);
@@ -8,3 +9,4 @@ echo "<meta http-equiv=\"refresh\" content=\"0; url=conf_bkp.php\" />\n";
 
 
 ?>
+
