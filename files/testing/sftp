@@ -3,12 +3,11 @@ USER=
 PORT=
 HOST=
 PASSWD=
+FILE=
 
 sshpass -p "$PASSWD" sftp -oBatchMode=no -P $PORT -b - $USER@$HOST << !
    cd /home/$USER
-   mput v4.22-beta.1.zip
-   mput testas
-   mput clients1.zip
+   mput $FILE
    bye
 !
 # First time needs to accept host key
