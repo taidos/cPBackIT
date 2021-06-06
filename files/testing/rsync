@@ -1,0 +1,1 @@
+sshpass -p 'sshpassword' rsync --progress -avz -e ssh test@remhost:~/something/ ~/bak/
