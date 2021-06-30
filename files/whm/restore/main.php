@@ -2,7 +2,6 @@
 #!/usr/bin/php-cgi
 
 $usario = $_ENV['REMOTE_USER'];
-//$usario = "carlosfaustino";
 $lines = file("/home/".$usario."/.cpbackit/cpbackit.conf");
 
 foreach ($lines as $key) {
