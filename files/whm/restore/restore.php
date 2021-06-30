@@ -20,12 +20,12 @@ $final = "cpmove-$str1";
 $user = substr($str1, 0, -7);
 //echo $final;
                 $restorecmd1 = "wget -O /home/'".$final."' ftp://'".$key_remote_user."':'".$key_remote_port."'@'".$key_remote_ip."'/'".$key_restination_folder."'/'".$word1."'";
-                $restorecmd2 = "rm -rf /home/'".$final."' /home/cpmove-'".$user."'";
-                $restorecmd6 = "/scripts/restorepkg ".$user;
+                $restorecmd2 = "/scripts/restorepkg ".$user;
                 $restorecmd3 = "/usr/local/cpanel/bin/whmapi1 modifyacct user='".$user."' owner='".$usario."'";
+                $restorecmd4 = "rm -rf /home/'".$final."' /home/cpmove-'".$user."'";
                 system( "{$restorecmd1}" );
-                system( "{$restorecmd6}" );
                 system( "{$restorecmd2}" );
                 system( "{$restorecmd3}" );
+                system( "{$restorecmd4}" );
 
 ?>
