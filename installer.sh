@@ -48,6 +48,10 @@ curl -o $WHM/index.php $REPO/files/whm/index.php  >> $LOGFILE  2>&1
 curl -o $WHM/landing.php $REPO/files/whm/landing.php  > $LOGFILE  2>&1
 curl -o $WHM/processscript.php $REPO/files/whm/processscript.php >> $LOGFILE  2>&1
 curl -o $WHM/style.css $REPO/files/whm/style.css >> $LOGFILE  2>&1
+mkdir /usr/local/cpanel/whostmgr/docroot/cpbackit/restore > $LOGFILE  2>&1
+curl -o $WHM/restore/index.php $REPO/files/whm/restore/index.php > $LOGFILE  2>&1
+curl -o $WHM/restore/restore.php $REPO/files/whm/restore/restore.php > $LOGFILE  2>&1
+curl -o $WHM/restore/main.php $REPO/files/whm/restore/main.php > $LOGFILE  2>&1
 
 #----------------------------------
 # allowing php in the addon
