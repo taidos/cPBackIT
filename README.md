@@ -11,6 +11,10 @@ We need now more changes on the source code but if someone wants to help you can
 - Reseller restore from FTP account
 - Rsync method
 
+
+# Works done:
+- Restore feature
+
 # Licensing - AGPLv3
 
     cPBackit, cPanel Plugin to Rsync and Backup accounts
