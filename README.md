@@ -8,7 +8,6 @@ We need now more changes on the source code but if someone wants to help you can
 
 # Works getting made:
 - SFTP Transfer 
-- Reseller restore from FTP account
 - Rsync method
 
 
