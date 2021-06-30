@@ -58,7 +58,7 @@ $usario = $_ENV['REMOTE_USER'];
 </p>
 <p>
 
-<form action="restore.php" method="get">
+<form target="_blank" action="restore.php" method="get">
 Filename: <input type="text" name="filename"><br>
 <input type="submit">
 </form>
