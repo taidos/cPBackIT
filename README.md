@@ -14,6 +14,10 @@ We need now more changes on the source code but if someone wants to help you can
 # Works done:
 - Restore feature
 
+### Buy me a coffee
+[![](https://img.buymeacoffee.com/api/?url=aHR0cHM6Ly9pbWcuYnV5bWVhY29mZmVlLmNvbS9hcGkvP25hbWU9YWRuYW50dXJraSZzaXplPTMwMCZiZy1pbWFnZT1ibWMmYmFja2dyb3VuZD1mZjgxM2Y=&creator=taidos&is_creating=building%20cool%20things%20every%20single%20f**king%20day.&design_code=1&design_color=%23ff813f&slug=taidos)](https://www.buymeacoffee.com/taidos)
+
+
 # Licensing - AGPLv3
 
     cPBackit, cPanel Plugin to Rsync and Backup accounts
