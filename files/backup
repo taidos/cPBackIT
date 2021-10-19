@@ -22,7 +22,7 @@ rm -rf /home/$1/.cpbackit/users
 grep $1 /etc/trueuserowners | grep -v root | cut -d : -f 1 > /home/$1/.cpbackit/users
 cat /home/$1/.cpbackit/users | while read CPUSER; do
 echo "Now processing ${CPUSER} ..."
-/usr/local/cpanel/scripts/pkgacct ${CPUSER}
+/usr/local/cpanel/scripts/pkgacct ${CPUSER} --nocompress
 
 done
 echo -e "===============  cPBackIT - End of the First Backup Stage   =============="
