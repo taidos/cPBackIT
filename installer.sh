@@ -31,7 +31,8 @@ curl -o /root/cpanel3-skel/.cpbackit/cpbackit.conf $REPO/files/cpbackit.conf  >>
 #----------------------------------
 
 yum -y install epel-release >> $LOGFILE  2>&1
-yum -y install curlftpfs  >> $LOGFILE  2>&1
+yum -y install curlftpfs >> $LOGFILE  2>&1
+modprobe fuse >> $LOGFILE  2>&1
 
 #----------------------------------
 # put the start backup file in root location
