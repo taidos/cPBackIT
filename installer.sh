@@ -27,6 +27,13 @@ mkdir -p /root/cpanel3-skel/.cpbackit >> $LOGFILE
 curl -o /root/cpanel3-skel/.cpbackit/cpbackit.conf $REPO/files/cpbackit.conf  >> $LOGFILE  2>&1
 
 #----------------------------------
+# adding new way of backup trow rsync and curlftpfs
+#----------------------------------
+
+yum -y install epel-release >> $LOGFILE  2>&1
+yum -y install curlftpfs  >> $LOGFILE  2>&1
+
+#----------------------------------
 # put the start backup file in root location
 #----------------------------------
 
