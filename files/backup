@@ -19,6 +19,7 @@ echo -e "-----------------------------------------------------------------------
 echo -e "=====  cPBackIT - First Backup Stage ( Packing accounts Process )  ====="
 echo -e "-------------------------------------------------------------------------------------------"
 rm -rf /home/$1/.cpbackit/users
+mkdir /home/$1/.cpbackit/mount
 grep $1 /etc/trueuserowners | grep -v root | cut -d : -f 1 > /home/$1/.cpbackit/users
 cat /home/$1/.cpbackit/users | while read CPUSER; do
 echo "Now processing ${CPUSER} ..."
@@ -49,5 +50,7 @@ mput $FILE
 
 bye
 EOF
+umount /home/$1/.cpbackit/mount
+rm -rf /home/$1/.cpbackit/mount
 echo -e "-------------------------------------------------------------------------------------------"
 done
