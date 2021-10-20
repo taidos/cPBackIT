@@ -51,9 +51,10 @@ echo -e "-----------------------------------------------------------------------
 #bye
 #EOF
 
+mkdir /home/$1/.cpbackit/mount
 curlftpfs $USER:$PASSWD@$HOST /home/$1/.cpbackit/mount
 mkdir -p /home/$1/.cpbackit/mount/$FOLDER/$NOW
-rsync -e /home/cpmove-$FTP /home/$1/.cpbackit/mount/$FOLDER/$NOW/
+mv /home/cpmove-$FTP.tar /home/$1/.cpbackit/mount/$FOLDER/$NOW/
 umount /home/$1/.cpbackit/mount
 rm -rf /home/$1/.cpbackit/mount
 
