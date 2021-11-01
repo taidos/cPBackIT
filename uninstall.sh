@@ -9,7 +9,7 @@ rm -rf /usr/local/cpanel/whostmgr/docroot/cgi/cpbackit;
 rm -rf /var/log/cpbackit;
 rm -rf /scripts/cpbackit;
 rm -rf /etc/cpbackit;
-/usr/bin/crontab -l | grep -v 'cpbackit' > /var/spool/cron/root
+/usr/bin/crontab -l | grep -v 'cpbackit' >> /var/spool/cron/root
 echo -e "[ $GREEN done $RESET ]"
 echo -e "[ Thanks for used our Plugin, i hope you can send one feedback to info@cpbackit.in about the reason of your leaving ]"
 	
