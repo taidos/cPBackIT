@@ -73,5 +73,5 @@ curl -o $WHM/cpbackit.appconfig $REPO/files/whm/cpbackit.appconfig >> $LOGFILE  
 /usr/local/cpanel/bin/register_appconfig $WHM/cpbackit.appconfig >> $LOGFILE  2>&1
 
 echo -e "Thanks for using my plugin, i hope you enjoy"
-echo -e "Please fallow me in: http://git.carlos-faustino.com"
+echo -e "Please follow me in: https://carlos-faustino.com"
 echo -e "For updates ;)"
